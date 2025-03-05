@@ -16,7 +16,7 @@ export const updateProfile = async (req, res) => {
 					const uploadResponse = await cloudinary.uploader.upload(image);
 					updatedData.image = uploadResponse.secure_url;
 				} catch (error) {
-					console.error("Error uploading image:", uploadError);
+					console.error("Error uploading image:", error);
 
 					return res.status(400).json({
 						success: false,
